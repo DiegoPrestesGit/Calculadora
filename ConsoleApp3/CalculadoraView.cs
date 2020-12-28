@@ -125,11 +125,11 @@ namespace ConsoleApp3
             }
             Console.WriteLine("Quantos divisores (número retirado do dividendo)?");
             int qntNums = int.Parse(Console.ReadLine());
-            List<double> nums = new List<double>();
+            List<decimal> nums = new List<decimal>();
             for (int i = 1; i <= qntNums; i++)
             {
                 Console.WriteLine($"Digite o {i}º número usado para dividir:");
-                double num = double.Parse(Console.ReadLine());
+                decimal num = decimal.Parse(Console.ReadLine());
                 if (num == 0)
                 {
                     Console.WriteLine("Não é possível dividir por 0! PRESSIONE VOLTANDO A TELA PRINCIPAL");
@@ -139,7 +139,7 @@ namespace ConsoleApp3
                 nums.Add(num);
                 Console.WriteLine();
             }
-            double total = Calculadora.Divisao(dividendo, nums);
+            decimal total = Calculadora.Divisao(dividendo, nums);
             Console.WriteLine(total);
             Console.WriteLine("Pressione enter para continuar...");
             Console.ReadLine();

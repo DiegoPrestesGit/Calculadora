@@ -38,14 +38,22 @@ namespace ConsoleApp3
             return total;
         }
 
-        public double Divisao(double total, List<double> nums)
+        public decimal Divisao(decimal total, List<decimal> nums)
         {
-            foreach (double num in nums)
+            try
             {
-                total /= num;
-                Console.WriteLine($"Valores durante execução: {total}");
+                foreach (decimal num in nums)
+                {
+                    total /= num;
+                    Console.WriteLine($"Valores durante execução: {total}");
+                }
+                return total;
             }
-            return total;
+            catch (DivideByZeroException err)
+            {
+                throw err;
+            }
+            
         }
     }
 }
